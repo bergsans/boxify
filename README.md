@@ -2,15 +2,15 @@
 
 ![animated gif demo](boxify.gif)
 
-# Instructions
+## Boxify some text
 
 Use `V` and select text line-wise. Give command `Boxify` without changing the defaulted `:'<.'>`.
 
-# Setup using Plug
+## Setup using Plug
 
 Install with `Plug 'claes-magnus/boxify', { 'do': 'npm run build' }`, `:UpdateRemotePlugins`.
 
-# Setup manually
+## Setup manually
 Make sure to have NeoVim installed as well as the node-js client. Use `:checkhealth` to see if the node client is installed.
 
 Usually, the NeoVim config is located at `~/.config/nvim`. If `rplugin` and the subfolder 
