@@ -2,9 +2,9 @@
   "name": "boxify",
   "version": "1.0.0",
   "description": "",
-  "main": "src/boxify.js",
+  "main": "boxify.js",
   "scripts": {
-    "build": "cp src/boxify.js ~/.config/nvim/rplugin/node",
+    "build": "cp -p ./src/boxify.js ~/.config/nvim/rplugin/node/boxify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
