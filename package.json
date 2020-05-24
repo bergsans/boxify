@@ -1,0 +1,21 @@
+{
+  "name": "boxify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/boxify.js",
+  "scripts": {
+    "build": "cp src/boxify.js ~/.config/nvim/rplugin/node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claes-magnus/boxify.git"
+  },
+  "keywords": [],
+  "author": "claes-magnus <claes-magnus@herebeseaswines.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claes-magnus/boxify/issues"
+  },
+  "homepage": "https://github.com/claes-magnus/boxify#readme"
+}
