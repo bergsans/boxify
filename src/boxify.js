@@ -8,23 +8,17 @@ const bottomLn = (w) => `╚${'═'.repeat(w + 2)}╝`;
 
 module.exports = plugin => {
   async function boxify() {
-    const { nvim } = await plugin;
-    const { buffer } = await nvim;
-    const [, sl,] = await nvim.call('getpos', true ? `'<` : `'[`); 
-    const [, el,] = await nvim.call('getpos', true ? `'>` : `']`);
-    const lns = await buffer.getLines({
-      start: sl - 1,
-      end: el,
-    });
+    const { nvim } =  await plugin;
+    const { buffer } =  await nvim;
+    const [, startLn,] =  await nvim.call('getpos', `'<`); 
+    const [, end,] =  await nvim.call('getpos', `'>`);
+    const start = startLn - 1;
+    const lns =  await buffer.getLines({ start, end });
     const longestLn = longestLnLenOf(lns);
-    const newLines = fmtLns(lns, longestLn);
-    await plugin.nvim.buffer.setLines(newLines, {
-      start: sl - 1,
-      end: el,
-      strictIndexing: true,
-    });
-    await buffer.insert(topLn(longestLn), sl - 1);
-    await buffer.insert(bottomLn(longestLn), el + 1);
+    const formattedLines = fmtLns(lns, longestLn);
+    await buffer.setLines(formattedLines, { start, end, strictIndexing: true, });
+    await buffer.insert(topLn(longestLn), start);
+    await buffer.insert(bottomLn(longestLn), end + 1);
   }
 
   plugin.registerCommand('Boxify', boxify, {
