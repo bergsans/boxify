@@ -8,7 +8,7 @@ Use `V` and select text line-wise. Give command `Boxify` without changing the de
 
 ## Setup using Plug
 
-Install with `bergsans/conways-game-of-life-without-ui, `:PlugInstall`, `:UpdateRemotePlugins`.
+Install with `bergsans/boxify, `:PlugInstall`, `:UpdateRemotePlugins`.
 
 ## Setup manually
 Make sure to have NeoVim installed as well as the node-js client. Use `:checkhealth` to see if the node client is installed.
